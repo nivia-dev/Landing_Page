@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Manage Landing_Page</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="brand">
+            <img src="images/logo.svg" alt="">
+        </div>
+        
+        <nav id="menu">
+            <ul id="items">
+                <li><a href="#">Princing</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>               
+        </nav>
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="images/icon-hamburger.svg"  alt=""></button>
+        
+        <!--<div class="btn-open" id="iconMenu">
+            <img src="images/icon-hamburger.svg" id="burger" onclick="clickMenu()" alt="">
+        </div>-->
+        <!--<div class="btn-close" id="over"><img src="images/icon-close.svg" id="close" onclick="closeMenu()" alt=""></div>  -->    
+        
+    </header>
+
+    <main>
+        <section id="hedImg">
+            <img src="images/illustration-intro.svg" alt="graphics">
+        </section>
+    
+        <section id="hed">
+            <h1>Bring everyone together to build better products.</h1>
+            <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+            <button type="submit" class="btn">Get Started</button>
+        </section>
+    
+        <section class="manage">
+            <h2>What's different about Manage?</h2>
+            <p>Manage provides all the functionality your team needs, whitout the complexity. Our software is tailor-made for modern digital product teams.</p>
+        </section>
+        <section class="task">
+            <div>
+                <h3 class="num">01</h3>
+                <h3 class="text">Track company-wide progress</h3>
+                <p class="parag">See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest at details. Never lose sight of the bigger picture again.</p>
+            </div>
+            <div>
+                <h3 class="num">02</h3>
+                <h3 class="text">Advanced built-in reports</h3>
+                <p class="parag">Set internal delivery estimates and track progress toward company goals. Our custoomisable dashboard helps you build out the reports you neeed to keep key stakeholders informed.</p>
+            </div>
+            <div>
+                <h3 class="num">03</h3>
+                <h3 class="text">Everything you need in one place</h3>
+                <p class="parag">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manag offers an all-in-one team productivity solution.</p>
+            </div>
+        </section>
+        <section class="brief">
+            <div>
+                <h2>What they've said</h2>
+                <div class="carousel">
+                    <div class="slides">
+                        <input type="radio" id="radio1" name="btn-radio">
+                        <input type="radio" id="radio2" name="btn-radio">
+                        <input type="radio" id="radio3" name="btn-radio">
+                        <input type="radio" id="radio4" name="btn-radio">
+            
+                        <div class="slide s1">
+                            <img src="images/avatar-anisha.png" alt="Anisha">
+                            <h3>Anisha Li</h3>
+                            <p>"Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated."</p>
+                        </div>
+                        <div class="slide" id="middle">
+                            <img src="images/avatar-ali.png" alt="Ali">
+                            <h3>Ali Bravo</h3>
+                            <p>"We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion ande every one is much more focused."</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/avatar-richard.png" alt="Richard">
+                            <h3>Richard Watts</h3>
+                            <p>"Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop recommending them to everyone I talk to!"</p>
+                        </div>
+                        <div class="slide" id="last">
+                            <img src="images/avatar-shanai.png" alt="Shanai">
+                            <h3>Shanai Gough</h3>
+                            <p>"Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whate team insync whitout being intrusive."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-auto">
+                        <div class="btn-auto1"></div>
+                        <div class="btn-auto2"></div>
+                        <div class="btn-auto3"></div>
+                        <div class="btn-auto4"></div>
+                    </div>
+                    <div class="navigation">
+                        <label class="bar"for="radio1"></label>
+                        <label class="bar"for="radio2"></label>
+                        <label class="bar"for="radio3"></label>
+                        <label class="bar"for="radio4"></label>
+                    </div>
+                    
+                </div>
+                <button type="submit" class="btn">Get Started</button>
+            </div>
+        </section>
+        <section class="orange">
+            <h1>Simplify how your team works today.</h1>
+            <button type="submit" class="btn">Get Started</button>
+        </section>
+        
+    </main>
+    <footer>
+        <input type="text" id="tIn" placeholder="Updates in your inbox">
+        <button type="submit" class="btn">Go</button>
+        <div id="list">
+            <ul>
+                <li>Home</li>
+                <li>Princing</li>
+                <li>Products</li>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Community</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+        
+        <div class="redes">
+            <img src="images/icon-facebook.svg" alt="facebook">
+            <img src="images/icon-youtube.svg" alt="youtube">
+            <img src="images/icon-twitter.svg" alt="twitter">
+            <img src="images/icon-pinterest.svg" alt="pinterest">
+            <img src="images/icon-instagram.svg" alt="instagram">
+        </div>
+        <div id="foot">
+            <img src="images/logo-white.svg" alt="logo"></div>
+        <div id="copy"><h4>Copyright 2020 All Rights Reserved</h4>
+        </div>
+        
+    </footer>
+    
+    
+    <h4 id="code">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/nivia-dev">Nivia Alves</a>
+    </h4>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

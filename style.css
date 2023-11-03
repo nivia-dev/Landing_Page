@@ -1,0 +1,480 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap');
+
+:root {
+    --Bright_Red: hsl(12, 88%, 59%);
+    --Dark_Blue: hsl(228, 39%, 23%);
+
+    --Dark_Grayish_Blue: hsl(227, 12%, 61%);
+    --Very_Dark_Blue: hsl(233, 12%, 13%);
+    --Very_Pale_Red: hsl(13, 100%, 96%);
+    --Vary_Light_Gray: hsl(0, 0%, 98%);
+
+    --font_primary: 'Be Vietnam Pro', sans serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: auto;
+    font-family: var(--font_primary);  
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    background: url("images/bg-tablet-pattern.svg") no-repeat top -6rem right -4rem / 25rem;
+    padding: 18vh 6vw;
+    width: 100%;
+    z-index: -1;
+}
+
+.container {
+    background: url("images/bg-tablet-pattern.svg") no-repeat top 27rem right -14rem / 22rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.8rem;   
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#items a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    background-color:var(--Vary_Light_Gray);
+    color: var(--Very_Dark_Blue);  
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+#items a:hover {
+    background-color: gray;
+}
+
+#items {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    list-style-type: none;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+}
+
+#menu.active #items {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+
+
+#menu {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    display: none;
+}
+
+#hedImg > img {
+    width: 100%;      
+}
+section {
+    padding-top: 1.5rem;
+}
+
+
+h1, h2, h3, h4, p {
+    color: var(--Dark_Blue);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem; 
+    padding: 0.5rem;  
+}
+
+h3 {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+h4 {
+    font-size: 0.7rem;
+    color: var(--Dark_Grayish_Blue);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4;
+    
+}
+
+
+#hed button, .brief button, .orange button, footer > button {
+    background-color: var(--Bright_Red);
+    color: var(--Vary_Light_Gray);
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 5px 5px 10px var(--Bright_Red);
+    padding: 10px 20px;
+    margin: 3rem;  
+}
+
+.num {
+    background-color: var(--Bright_Red);
+    color: var(--Vary_Light_Gray);
+    float: left;
+    width: 3.5rem;
+    height: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.text {
+    background-color: var(--Very_Pale_Red);
+    margin-left: 10px;
+    margin-right: -1rem;    
+
+}
+
+.parag {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+div.carousel {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    background-color: var(--Vary_Light_Gray);
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+
+.navigation, .nav-auto {
+    position: absolute;
+    width: 100%;
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    padding-right: 3rem;
+    padding-bottom: 1rem;  
+    
+}
+
+.navigation .bar, .nav-auto div {
+    border: 1px solid var(--Bright_Red);
+    padding: 0.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigation .bar:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.navigation .bar:hover {
+    background-color: var(--Bright_Red);
+}
+
+#radio1:checked ~ .btn-auto1 {
+    background-color: var(--Bright_Red);
+}
+
+#radio1:checked ~ .s1 {
+    margin-left: 0%;
+}
+#radio2:checked ~ .s1 {
+    margin-left: -25%;
+}
+#radio3:checked ~ .s1 {
+    margin-left: -50%;
+}
+#radio4:checked ~ .s1 {
+    margin-left: -75%;
+}
+
+.orange {
+    background-color: var(--Bright_Red);
+    padding-top: 4rem;
+    padding-bottom: 2rem;   
+}
+
+.orange h1 {
+    color: var(--Vary_Light_Gray);
+    padding: 0.5rem;
+}
+
+.orange >button {
+    background-color: var(--Vary_Light_Gray);
+    color: var(--Bright_Red);
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--Very_Dark_Blue);
+    justify-items: center;
+    padding: 1.2rem;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+}
+    
+
+footer > button {
+    box-shadow: none;
+    width: 5rem;
+    grid-area: 1 / 2 / span 1 / span 1;
+    padding: 5px;
+    margin-top: 2px;
+    margin-left: 2rem;
+}
+
+footer > input {
+    grid-area: 1 / 1 / span 1/ span 1;
+    border-radius: 2rem;
+    height: 2.5rem;
+    width: 13rem;
+    padding-left: 0.8rem;
+    margin-left: -0.5rem;   
+}
+
+footer > #list {
+    grid-area: 2 / 1 / span 1/ span 2;
+    text-align: left;
+    justify-content: center;
+}
+footer > #list > ul {
+    color: var(--Vary_Light_Gray);
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    line-height: 2rem;
+    padding-bottom: 2rem;
+}
+
+.redes {
+    grid-area: 3 / 1 / span 1 /span 2;
+    display: flex;
+    justify-content: center;  
+}
+
+.redes > img {
+    padding-right: 20px;
+    padding-bottom: 15px;      
+}
+
+#foot {
+    grid-area: 4/ 1 / span 1/ span 2;
+}
+
+#foot > img {
+    padding: 2rem;
+    text-align: center;
+}
+
+#copy {
+    grid-area: 5 / 1 / span 1/ span 2
+}
+
+h4#code {
+    color: var(--Dark_Blue);
+    padding-top: 1rem;
+}
+
+
+@media screen and (min-width: 900px) {
+    body {
+        justify-content: center;
+    }
+
+    body::before {
+        background: top 2rem right 19rem / 30rem;
+    }
+    
+    .container {
+        width: 80%;
+        background: none;
+        text-align: left;
+        margin: auto;    
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #itens a {
+        padding-right: 0.5rem;
+    }
+
+    main {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            column-gap: 6rem;
+            padding-top: 2rem;  
+        }
+    
+    #hed {
+        grid-area: 1 / 1 /span 1/ span 1;
+    }
+
+    #hedImg {
+        grid-area: 1 / 2 / span 1 /span 1;   
+    }
+
+    #hed button {
+        margin-left: 0;
+    }
+    .manage {
+            grid-area: 2 / 1 / span 3 / span 1;
+        }
+
+    .task {
+        grid-area: 2 / 2 / span 3 / span 1;
+    }
+
+    .brief {
+        grid-area: 5 / 1 / span 1 / span 2;
+        text-align: center;
+    }
+
+    .brief h2, .brief h3, .brief p {
+        text-align: center;
+    }
+
+    
+    h1, h2, h3, h4, p {
+        text-align: left;
+    }
+    
+    h1 {
+        font-size: 3.5rem;   
+    }
+
+    .slides {
+        width: 100%;
+        height: auto;
+        display: flex;   
+    }
+
+    .slide:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+
+    .navigation, .nav-auto {
+        display: none;
+           
+    }
+
+    .orange {
+        grid-area: 6 / 1 / span 1 / span 2;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .orange h1 {
+        width: 50vw;
+        font-size: 3rem;  
+    }
+     
+    footer {
+        grid-template-columns: 20% 50% 20% 10%;
+     }
+
+    #foot {
+        grid-area: 1 / 1 / span 1/ span 1;
+    }
+
+    footer input {
+        grid-area: 1/ 3 / span 1/ span 1;
+        margin-top: 1rem;
+    }
+
+    footer button {
+         grid-area: 1 / 4 / span1 / span 1;
+         margin-top: 1rem;
+     }
+
+    footer > #list {
+        grid-area: 1 / 2 / span 2/ span 1;
+        text-align: left;
+        padding-top: 2rem; 
+    }
+    
+    footer > #list > ul {
+            -webkit-column-gap: 10rem;         
+        }
+    
+    .redes {
+        grid-area: 2 / 1 / span 1 / span 1;
+        height: 35%;
+        align-self: flex-end;
+        margin-bottom: 1.5rem;    
+    }
+    
+    #copy {
+        grid-area: 2 / 3 / span 1/ span 2;   
+    }
+}
