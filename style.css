@@ -50,63 +50,62 @@ header {
     justify-content: space-between;
 }
 
-
-#items a {
-    display: block;
-    padding: 0.5rem;
-    text-decoration: none;
-    text-align: center;
-    background-color:var(--Vary_Light_Gray);
-    color: var(--Very_Dark_Blue);  
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-#items a:hover {
-    background-color: gray;
+.myMenu {
+    height: 30%;
+    width: 80%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 1.3rem;
+    background-color: white;
+    margin-top: 4rem;
+    border-radius: 1rem ;
 }
 
 #items {
-    display: block;
     position: absolute;
-    width: 100%;
-    top: 70px;
-    right: 0px;
-    list-style-type: none;
-    background: #e7e7e7;
-    transition: 0.6s;
-    z-index: 1000;
-    height: 0px;
-    visibility: hidden;
-    overflow-y: hidden;
-}
-
-#menu.active #items {
-    height: calc(100vh - 70px);
-    visibility: visible;
-    overflow-y: auto;
-  }
-
-
-  #btn-mobile {
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    gap: 0.5rem;
-  }
-
-
-#menu {
-    position: relative;
-    top: 25%;
+    top: 5%;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 2rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    color: var(--Dark_Grayish_Blue);
+    
+}
+
+#items > li {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.myMenu  a {
+    text-decoration: none;
+    color: var(--Very_Dark_Blue);
+    transition: 0.3s;
+    text-align: center;
+    margin: 0 1rem;
+    
+}
+#burger, #close {
+    cursor: pointer;
+}
+#burger:checked ~ .container{
+    opacity: 1;
+}
+
+#btnDesk {
     display: none;
 }
+
+
+#close {
+    display: none;
+}
+
 
 #hedImg > img {
     width: 100%;      
@@ -143,20 +142,19 @@ h4 {
 
 p {
     font-size: 1rem;
-    line-height: 1.4;
-    
+    line-height: 1.4;  
 }
 
 
-#hed button, .brief button, .orange button, footer > button {
+button#btnDesk, #hed button, .brief button, .orange button, footer > button {
     background-color: var(--Bright_Red);
     color: var(--Vary_Light_Gray);
     width: 8.5rem;
     height: 2.5rem;
     border-radius: 2rem;
     border: none;
-    box-shadow: 5px 5px 10px var(--Bright_Red);
-    padding: 10px 20px;
+    box-shadow: 0.3125rem 0.3125rem 0.3125rem var(--Bright_Red);
+    padding: 0.625rem 1.25rem;
     margin: 3rem;  
 }
 
@@ -172,7 +170,7 @@ p {
 
 .text {
     background-color: var(--Very_Pale_Red);
-    margin-left: 10px;
+    margin-left: 0.625rem;
     margin-right: -1rem;    
 
 }
@@ -286,8 +284,8 @@ footer > button {
     box-shadow: none;
     width: 5rem;
     grid-area: 1 / 2 / span 1 / span 1;
-    padding: 5px;
-    margin-top: 2px;
+    padding: 0.3125rem;
+    margin-top: 0.125rem;
     margin-left: 2rem;
 }
 
@@ -321,8 +319,8 @@ footer > #list > ul {
 }
 
 .redes > img {
-    padding-right: 20px;
-    padding-bottom: 15px;      
+    padding-right: 1.25rem;
+    padding-bottom: 0.9375rem;      
 }
 
 #foot {
@@ -347,25 +345,45 @@ h4#code {
 @media screen and (min-width: 900px) {
     body {
         justify-content: center;
+        overflow-x: hidden;
     }
-
     body::before {
-        background: top 2rem right 19rem / 30rem;
+        background: none;
     }
     
     .container {
-        width: 80%;
-        background: none;
+        width: 90%;
         text-align: left;
-        margin: auto;    
+        margin: auto;
+        background: url("images/bg-tablet-pattern.svg") no-repeat top -2rem right -3rem / 30rem;    
     }
 
-    #menu {
+    .myMenu {
+        display: block;
+        height: auto;
+        width: 1000%;
+        margin-top: 0;
+        position: absolute;        
+    }
+    #burger, #close {
+        pointer-events: none;
+        cursor: none;
+        visibility: hidden;
+    }
+    #btnDesk {
         display: block;
     }
-
-    #itens a {
-        padding-right: 0.5rem;
+    button#btnDesk {
+        margin: -1rem;
+    }
+    
+    #items {
+        top: 10%;
+        width: 50%;
+        margin-top: 2rem;
+        flex-direction: row;
+        margin-left: 20rem;
+        
     }
 
     main {
@@ -389,11 +407,26 @@ h4#code {
     }
     .manage {
             grid-area: 2 / 1 / span 3 / span 1;
-        }
+            }
 
     .task {
         grid-area: 2 / 2 / span 3 / span 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        
     }
+
+    .text {
+        background-color: transparent;
+        padding-right: 0.9375rem;
+    }
+
+    .num {
+        width: 4rem;
+        height: 2.4rem;
+    }
+
 
     .brief {
         grid-area: 5 / 1 / span 1 / span 2;
@@ -407,25 +440,67 @@ h4#code {
     
     h1, h2, h3, h4, p {
         text-align: left;
+        
     }
-    
+        
     h1 {
-        font-size: 3.5rem;   
+        font-size: 4rem;
+        padding-right: 2rem;   
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-right: 10rem;   
+    }
+
+    .parag {
+        font-size: 1rem;
+        padding-right: 0;
     }
 
     .slides {
         width: 100%;
-        height: auto;
-        display: flex;   
+        height: auto;  
     }
-
+    
+    .slide {
+        width: 70%
+    }
+    .slide p {
+        text-align: center;
+        padding-right: 2rem;
+    }
     .slide:not(:last-child) {
         margin-right: 1.5rem;
     }
-
+    
+    #radio1:checked ~ .s1 {
+        margin-left: 0%;
+    }
+    #radio2:checked ~ .s1 {
+        margin-left: -0%;
+    }
+    #radio3:checked ~ .s1 {
+        margin-left: -0%;
+    }
+    #radio4:checked ~ .s1 {
+        margin-left: -25%;
+    }
+    
     .navigation, .nav-auto {
         display: none;
-           
     }
 
     .orange {
@@ -436,7 +511,7 @@ h4#code {
 
     .orange h1 {
         width: 50vw;
-        font-size: 3rem;  
+        font-size: 3.5rem;  
     }
      
     footer {
@@ -455,6 +530,7 @@ h4#code {
     footer button {
          grid-area: 1 / 4 / span1 / span 1;
          margin-top: 1rem;
+         margin-left: 0;
      }
 
     footer > #list {

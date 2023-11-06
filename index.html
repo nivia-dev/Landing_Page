@@ -16,7 +16,7 @@
             <img src="images/logo.svg" alt="">
         </div>
         
-        <nav id="menu">
+        <nav id="menu" class="myMenu">
             <ul id="items">
                 <li><a href="#">Princing</a></li>
                 <li><a href="#">Product</a></li>
@@ -25,12 +25,12 @@
                 <li><a href="#">Community</a></li>
             </ul>               
         </nav>
-        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false"><img src="images/icon-hamburger.svg"  alt=""></button>
+        <div class="btn-open" id="iconMenu">
+            <img src="images/icon-hamburger.svg" id="burger" onclick="openMenu()" alt="Abre Menu">
+            <img src="images/icon-close.svg" id="close" onclick="closeMenu()" alt="Fecha Menu">
+            <button type="submit" id="btnDesk">Get Started</button>
+        </div>
         
-        <!--<div class="btn-open" id="iconMenu">
-            <img src="images/icon-hamburger.svg" id="burger" onclick="clickMenu()" alt="">
-        </div>-->
-        <!--<div class="btn-close" id="over"><img src="images/icon-close.svg" id="close" onclick="closeMenu()" alt=""></div>  -->    
         
     </header>
 
@@ -42,7 +42,7 @@
         <section id="hed">
             <h1>Bring everyone together to build better products.</h1>
             <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
-            <button type="submit" class="btn">Get Started</button>
+            <button type="submit" class="btn" id="btn-hed">Get Started</button>
         </section>
     
         <section class="manage">

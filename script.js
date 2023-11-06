@@ -15,27 +15,20 @@ function nextImg() {
         count = 1;
     }
     document.getElementById('radio'+ count).checked = true
-    if (screen) {
-        document.getElementById('radio'+ count).checked = false
-    }
+    /*if (screen) {
+    document.getElementById('radio'+ count).checked = false
+    }*/
 }
 
-
-
-const btnMobile = document.getElementById('btn-mobile');
-
-function toggleMenu(event) {
-  if (event.type === 'touchstart') event.preventDefault();
-  const nav = document.getElementById('menu');
-  nav.classList.toggle('active');
-  const active = nav.classList.contains('active');
-  event.currentTarget.setAttribute('aria-expanded', active);
-  if (active) {
-    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-  } else {
-    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
-  }
+function openMenu() {
+  document.getElementById("menu").style.display = "block";
+  document.getElementById("burger").style.display = "none";
+  document.getElementById('close').style.display = "block";
+  
 }
 
-btnMobile.addEventListener('click', toggleMenu);
-btnMobile.addEventListener('touchstart', toggleMenu);
+function closeMenu() {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById ("close").style.display = "none"; 
+  document.getElementById("burger").style.display = "block";
+} 
