@@ -1,3 +1,7 @@
+let menu = document.getElementById("menu");
+let burger = document.getElementById("burger");
+let close = document.getElementById("close");
+let back = document.getElementById("back")
 let radio = document.querySelector('.bar');
 let count = 1;
 let screen = window.matchMedia("(min-width: 900px)")
@@ -15,20 +19,23 @@ function nextImg() {
         count = 1;
     }
     document.getElementById('radio'+ count).checked = true
-    /*if (screen) {
+
+    
+    if (screen) {
     document.getElementById('radio'+ count).checked = false
-    }*/
+    }
 }
 
 function openMenu() {
-  document.getElementById("menu").style.display = "block";
-  document.getElementById("burger").style.display = "none";
-  document.getElementById('close').style.display = "block";
-  
+  menu.style.display ="block";
+  burger.style.display = "none";
+  close.style.display = "block";
+  back.style.display = "block";
 }
 
 function closeMenu() {
-  document.getElementById("menu").style.display = "none";
-  document.getElementById ("close").style.display = "none"; 
-  document.getElementById("burger").style.display = "block";
+  menu.style.display = "none";
+  close.style.display = "none";
+  burger.style.display = "block";
+  back.style.display = "none"; 
 } 
