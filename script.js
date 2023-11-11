@@ -20,10 +20,9 @@ function nextImg() {
     }
     document.getElementById('radio'+ count).checked = true
 
-    
-    if (screen) {
+    /*if (screen) {
     document.getElementById('radio'+ count).checked = false
-    }
+    }*/
 }
 
 function openMenu() {
